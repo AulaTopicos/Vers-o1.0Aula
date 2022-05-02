@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    
+}
+
+a{
+    text-decoration: none;
+}
+
+img#logo {
+    width: 150px;
+    height: 120px;
+    margin-top: 20px;
+}
+.logo {
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+
+
+
