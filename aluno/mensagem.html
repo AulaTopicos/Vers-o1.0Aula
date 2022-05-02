@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Menu</title>
+
+  <!-- Bootstrap CSS CDN -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <!-- Our Custom CSS -->
+  <link rel="stylesheet" href="/layout/sidebar/sidebar/style.css">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome JS -->
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+    integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+    crossorigin="anonymous"></script>
+
+</head>
+<style>
+
+input[type="file"] {
+    display: none;
+  }
+
+  tr label {
+    padding: 5px 5px;
+    width: 200px;
+    background-color: #00A65A;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  tbody th {
+    color: rgb(102, 101, 101);
+  }
+
+  #faltas {
+    background-color: red;
+  }
+
+  #snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  background-color: #333; /* Black background color */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+  @media (max-width: 768px) {
+  tr label {
+        width: 150px;
+  }
+}
+
+</style>
+
+<body>
+
+  <!-- Sidebar  -->
+  <div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Colégio 3AS</h3>
+            <strong style="margin-left: -10px;"><img class="logo" src="/assets/images/logomarca.png" alt="Logomarca"></strong>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="/aluno/home.html">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-graduation-cap"></i>
+                    Aluno
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="/prof/nav_aluno/matricula.html">Matrícula</a>
+                    </li>
+                    <li>
+                        <a href="/prof/nav_aluno/presenca.html">Presença</a>
+                    </li>
+                    <li>
+                        <a href="/prof/nav_aluno/desempenho.html">Desempenho</a>
+                    </li>
+                    <li>
+                        <a href="/secretaria/alunos.html">Busca Por Aluno</a>
+                    </li>
+                </ul>
+                <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-user"></i>
+                    Usuário
+                </a>
+                <ul class="collapse list-unstyled" id="userSubmenu">
+                    <li>
+                        <a href="/aluno/usuario.html">Aluno</a>
+                    </li>
+                    <li>
+                        <a href="/prof/index.html">Professor</a>
+                    </li>
+                    <li>
+                        <a href="/secretaria/home.html">Secretaria</a>
+                    </li>
+                </ul>
+                <a href="/aluno/curso.html">
+                    <i class="fas fa-book"></i>
+                    Curso
+                </a>
+                <a href="/aluno/calendario.html">
+                    <i class="fas fa-calendar"></i>
+                    Calendário
+                </a>
+                <a href="#messageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-envelope"></i> Mensagens</a>
+                <ul class="collapse list-unstyled" id="messageSubmenu">
+                    <li>
+                        <a href="/aluno/mensagem.html">Gerais</a>
+                    </li>
+                    <li>
+                        <a href="/secretaria/mensagens_enviadas.html">Enviadas</a>
+                    </li>
+                    <li>
+                        <a href="/secretaria/mensagens_recebidas.html">Recebidas</a>
+                    </li>
+                </ul>
+                    
+            
+            <a href="/secretaria/aprovacao_professores.html"><i class="fas fa-book"></i> Aprovação</a>
+            <a href="/financeiro/index.html"><i class="fas fa-money-bill"></i> Financeiro</a>
+            </li>
+            <li>
+                
+            </li>
+            <li>
+                <a href="/index.html">
+                    <i class="fas fa-power-off"></i>
+                    Logoff
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- TOP NAV  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="vidaAcademica.html">Vida Acadêmica</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- end navMenu -->
+
+  <main>
+
+    <section class="section-content ">
+        <h1>2022</h1><hr>
+        <div class="d-md-flex justify-content-around justify-content-center">
+            <div class="card card-curso" style="width: 15rem;">
+                <img src="/assets/images/aluno/matematica.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Matemática</h5>
+                  <a href="#"  class="stretched-link" data-bs-toggle="modal" data-bs-target="#enviarMensagem">Enviar nova mensagem</a>
+                  <br><br>
+                  <button type="button" class="btn bg-warning text-dark" data-bs-toggle="modal" data-bs-target="#mensagemRecebida">
+                    Notificação <span class="badge ">2</span>
+                  </button>
+                </div>
+            </div>
+            <div class="card card-curso" style="width: 15rem;">
+                <img src="/assets/images/aluno/portugues.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Português</h5>
+                  <a href="#"  class="stretched-link" data-bs-toggle="modal" data-bs-target="#enviarMensagem">Enviar nova mensagem</a>
+                  <br><br>
+                  <button type="button" class="btn bg-warning text-dark" data-bs-toggle="modal" data-bs-target="#mensagemRecebida">
+                    Notificação <span class="badge ">2</span>
+                  </button>
+                </div>
+            </div>
+            <div class="card card-curso" style="width: 15rem;">
+                <img src="/assets/images/aluno/geografia.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Geografia</h5>
+                  <a href="#"  class="stretched-link" data-bs-toggle="modal" data-bs-target="#enviarMensagem">Enviar nova mensagem</a>
+                  <br><br>
+                  <button type="button" class="btn bg-warning text-dark" data-bs-toggle="modal" data-bs-target="#mensagemRecebida">
+                    Notificação <span class="badge ">2</span>
+                  </button>
+                </div>
+            </div>
+        </div>
+        <div class="d-md-flex justify-content-around">
+            <div class="card card-curso" style="width: 15rem;">
+                <img src="/assets/images/aluno/fut (2).jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Educação Fisica</h5>
+                  <a href="#"  class="stretched-link" data-bs-toggle="modal" data-bs-target="#enviarMensagem">Enviar nova mensagem</a>
+                  <br><br>
+                  <button type="button" class="btn bg-warning text-dark" data-bs-toggle="modal" data-bs-target="#mensagemRecebida">
+                    Notificação <span class="badge ">2</span>
+                  </button>
+                </div>
+            </div>
+            <div class="card card-curso" style="width: 15rem;">
+                <img src="/assets/images/aluno/artes (2).jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Artes</h5>
+                  <a href="#"  class="stretched-link" data-bs-toggle="modal" data-bs-target="#enviarMensagem">Enviar nova mensagem</a>
+                  <br><br>
+                  <button type="button" class="btn bg-warning text-dark" data-bs-toggle="modal" data-bs-target="#mensagemRecebida">
+                    Notificação <span class="badge ">2</span>
+                  </button>
+                </div>
+            </div>
+            <div class="card card-curso" style="width: 15rem;">
+                <img src="/assets/images/aluno/historia.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">História</h5>
+                  <a href="#"  class="stretched-link" data-bs-toggle="modal" data-bs-target="#enviarMensagem">Enviar nova mensagem</a>
+                  <br><br>
+                  <button type="button" class="btn bg-warning text-dark" data-bs-toggle="modal" data-bs-target="#mensagemRecebida">
+                    Notificação <span class="badge ">2</span>
+                  </button>
+                </div>
+            </div>
+        </div>
+        <!-- modal enviar mensagem -->
+        <div class="modal fade" id="enviarMensagem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Nova mensagem</h5>
+                  
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="mb-3">
+                      <label for="recipient-name" class="col-form-label">Remetente:</label>
+                      <input type="email" class="form-control" id="recipient-name" placeholder="E-mail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="recipient-name" class="col-form-label">Destinatario:</label>
+                        <select name="" id="">
+                            <option value="">Todos</option>
+                            <option value=""> Professor Marcos - marocospaulo@educa3as.com</option>
+                            <option value=""> Professor Antonio -antonio@educa3as.com</option>
+                            <option value=""> Professora Vanessa - venessa@educa3as.com</option>
+                            <option value=""> Professor Adriana - adrina@educa3as.com</option>
+                            <option value=""> Professor Rafael - rafael@educa3as.com</option>
+                            <option value=""> Professor Andre - andre@educa3as.com</option>
+                            <option value="">Lucas de Paulo - lucas@gmail.com</option>
+                            <option value="">Victoria Vic - vic1213@gmail.com</option>
+                            <option value="">Victor Hugo - victor@gmail.com</option>
+                            <option value="">Vinicios Santos - vini@gmail.com</option>
+                            <option value="">Maria Joana - marijoana@gmail.com</option>
+                            <option value="">Mateus Souza - mat@gmail.com</option>
+                            <option value="">Vinicios Pedro - viniciosat@gmail.com</option>
+                            <option value="">Mariana Santos - mari@gmail.com</option>
+                        </select>
+                      </div>
+                    <div class="mb-3">
+                      <label for="message-text" class="col-form-label">Mensagem:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                  
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                  <button type="button" class="btn btn-success" onclick="myFunction()">Enviar</button>
+                  <div id="snackbar">Mensagem enviada</div>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+
+
+
+        <!-- modal mensagem recebida -->
+        <div class="modal fade" id="mensagemRecebida" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" >
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Mensagem Recebidas</h5>
+                </div>
+                <div class="modal-body">
+                  <table class="table table-striped" style="width: 100%;">
+                    <thead>
+                      <tr>
+                        <th scope="col">Remetente</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">Professor Marcos</th>
+                        <td class="d-flex justify-content-end">
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                  <h2 class="accordion-header" id="headingOne">
+                                    <a class="accordion-button btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Ver mensagem 
+                                    </a>
+                                  </h2>
+                                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body ">
+                                      <strong>Olá.</strong>Verifiquei aqui e assim que possivel irei resolver. <br> <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#enviarMensagem">Responder</a>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">Professor Marcos </th>
+                        <td class="d-flex justify-content-end">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                                  <a class="accordion-button collapsed btn btn-info" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                    Ver mensagem 
+                                  </a>
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                                  <div class="accordion-body">
+                                    <strong>Olá.</strong>Verifiquei aqui e assim que possivel irei resolver. <br> <a href="#" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#enviarMensagem">Responder</a>
+                                  </div>
+                                </div>
+                              </div>
+                        </td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                </div>
+              </div>
+            </div>
+        </div>
+       
+    </section>
+  </main><br><br>
+
+
+</body>
+<!-- jQuery CDN - versão Slim (sem AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+  integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+  integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+<script type="text/javascript">
+function myFunction() {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+
+  setTimeout(function(){
+       x.className = x.className.replace("show", "");
+       
+     }, 3000);
+}
+</script>
+
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Menu</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="style-prof.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+   
+   
+    <!-- Styles from graphic-->
+    <style type="text/css">
+        #container {
+            height: 400px;
+        }
+        
+        .highcharts-figure,
+        .highcharts-data-table table {
+            min-width: 310px;
+            max-width: 800px;
+            margin: 1em auto;
+        }
+        
+        #sliders td input[type="range"] {
+            display: inline;
+        }
+        
+        #sliders td {
+            padding-right: 1em;
+            white-space: nowrap;
+        }
+        
+    </style>
+</head>
+
+<body>
+<!-- Sidebar  -->
+<div class="wrapper">
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Colégio 3AS</h3>
+            <strong style="margin-left: -10px;"><img class="logo" src="/assets/images/logomarca.png" alt="Logomarca"></strong>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="/aluno/home.html">
+                    <i class="fas fa-home"></i>
+                    Home
+                </a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-graduation-cap"></i>
+                    Aluno
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="/prof/nav_aluno/matricula.html">Matrícula</a>
+                    </li>
+                    <li>
+                        <a href="/prof/nav_aluno/presenca.html">Presença</a>
+                    </li>
+                    <li>
+                        <a href="/prof/nav_aluno/desempenho.html">Desempenho</a>
+                    </li>
+                    <li>
+                        <a href="/secretaria/alunos.html">Busca Por Aluno</a>
+                    </li>
+                </ul>
+                <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    <i class="fas fa-user"></i>
+                    Usuário
+                </a>
+                <ul class="collapse list-unstyled" id="userSubmenu">
+                    <li>
+                        <a href="/aluno/usuario.html">Aluno</a>
+                    </li>
+                    <li>
+                        <a href="/prof/index.html">Professor</a>
+                    </li>
+                    <li>
+                        <a href="/secretaria/home.html">Secretaria</a>
+                    </li>
+                </ul>
+                <a href="/aluno/curso.html">
+                    <i class="fas fa-book"></i>
+                    Curso
+                </a>
+                <a href="/aluno/calendario.html">
+                    <i class="fas fa-calendar"></i>
+                    Calendário
+                </a>
+                <a href="#messageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-envelope"></i> Mensagens</a>
+                <ul class="collapse list-unstyled" id="messageSubmenu">
+                    <li>
+                        <a href="/aluno/mensagem.html">Gerais</a>
+                    </li>
+                    <li>
+                        <a href="/secretaria/mensagens_enviadas.html">Enviadas</a>
+                    </li>
+                    <li>
+                        <a href="/secretaria/mensagens_recebidas.html">Recebidas</a>
+                    </li>
+                </ul>
+                    
+            
+            <a href="/secretaria/aprovacao_professores.html"><i class="fas fa-book"></i> Aprovação</a>
+            <a href="/financeiro/index.html"><i class="fas fa-money-bill"></i> Financeiro</a>
+            </li>
+            <li>
+                
+            </li>
+            <li>
+                <a href="/index.html">
+                    <i class="fas fa-power-off"></i>
+                    Logoff
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- TOP NAV  -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="vidaAcademica.html">Vida Acadêmica</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+<!-- end navMenu -->
+    
+    
+</body>
+<!-- jQuery CDN - versão Slim (sem AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+</script>
+
+</html>
