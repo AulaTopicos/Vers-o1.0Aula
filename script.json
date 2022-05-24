@@ -1,0 +1,73 @@
+
+[
+    {
+        "nome" : "Vinicius",
+        "idade" : 20,
+        "email" : "vinicius@gmail.com",
+        "idAluno" : "1",
+        "materias" : 
+        [{
+            "materia" : "inglês",
+            "idMateria" : "1",
+            "alunoId" : "1"
+        }],
+        "ativextra" : 
+        [{
+            "atividade" : "Java",
+            "idAtiv" : "1",
+            "alunoId" : "1"
+        }]
+    },
+
+    {
+        "nome" : "Victor",
+        "idade" : 21,
+        "email" : "victor@gmail.com",
+        "idAluno" : "2",
+        "materias" : 
+        [{
+            "materia" : "português",
+            "idMateria" : "2",
+            "alunoId" : "2"
+        }],
+        "ativextra" : 
+        [
+            {
+                "atividade" : "JavaScript",
+                "idAtiv" : "2",
+                "alunoId" : "2"
+            },
+            {
+                "atividade" : "Java",
+                "idAtiv" : "1",
+                "alunoId" : "2"
+            }
+        ]
+    },
+
+    {
+        "nome" : "Mateus",
+        "idade" : 24,
+        "email" : "mateus@gmail.com",
+        "idAluno" : "3",
+        "materias" : 
+        [
+            {
+            "materia" : "português",
+            "idMateria" : "1",
+            "alunoId" : "3"
+            },
+            {
+                "materia" : "matemática",
+                "idMateria" : "3",
+                "alunoId" : "3"
+            },
+            {
+                "materia" : "inglês",
+                "idMateria" : "2",
+                "alunoId" : "3"
+            }
+        ],
+        "ativextra" : []
+    }
+]
